@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Hello World 这是一篇测试博客的文章仅做前期测试用   123456#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;	printf(&amp;quot;Hello World\n&amp;quot;);	return 0;&amp;#125;">
+<meta name="description" content="Hello World 这是一篇测试博客的文章仅做前期测试用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hello zhangchen">
 <meta property="og:url" content="https://www.memcpywr.cn/2018/06/07/hello-zhangchen/index.html">
 <meta property="og:site_name" content="张晨的 日志">
-<meta property="og:description" content="Hello World 这是一篇测试博客的文章仅做前期测试用   123456#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;	printf(&amp;quot;Hello World\n&amp;quot;);	return 0;&amp;#125;">
+<meta property="og:description" content="Hello World 这是一篇测试博客的文章仅做前期测试用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-07T08:33:31.232Z">
+<meta property="og:updated_time" content="2018-06-10T07:47:15.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hello zhangchen">
-<meta name="twitter:description" content="Hello World 这是一篇测试博客的文章仅做前期测试用   123456#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;	printf(&amp;quot;Hello World\n&amp;quot;);	return 0;&amp;#125;">
+<meta name="twitter:description" content="Hello World 这是一篇测试博客的文章仅做前期测试用">
 
 
 
@@ -374,6 +374,7 @@
         <h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><blockquote>
 <p>这是一篇测试博客的文章<br>仅做前期测试用</p>
 </blockquote>
+<a id="more"></a>
 <hr>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	printf(&quot;Hello World\n&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -496,7 +497,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -778,6 +779,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'w6ha0kjm4JVnM2lkzePzmFwA-gzGzoHsz',
+        appKey: 'rrTXcnRif4DzhQhUGUcXXett',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

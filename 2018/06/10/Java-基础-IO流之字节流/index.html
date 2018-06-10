@@ -428,6 +428,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/06/10/Java-IO-之-File/" rel="prev" title="Java IO 之 File">
+                Java IO 之 File <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -510,7 +514,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -792,6 +796,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'w6ha0kjm4JVnM2lkzePzmFwA-gzGzoHsz',
+        appKey: 'rrTXcnRif4DzhQhUGUcXXett',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
