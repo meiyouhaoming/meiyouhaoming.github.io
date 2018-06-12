@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="张晨的 日志">
 <meta property="og:description" content="FileFile类可以用来在程序中操作文件和目录，能新建、删除、重命名文件和目录。File不能访问文件内容本身，如果需要访问需要使用输入输出流">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-10T16:12:05.425Z">
+<meta property="og:updated_time" content="2018-06-12T06:29:11.352Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java IO 之 File">
 <meta name="twitter:description" content="FileFile类可以用来在程序中操作文件和目录，能新建、删除、重命名文件和目录。File不能访问文件内容本身，如果需要访问需要使用输入输出流">
@@ -353,10 +353,36 @@
         <h1 id="File"><a href="#File" class="headerlink" title="File"></a>File</h1><p>File类可以用来在程序中操作文件和目录，能新建、删除、重命名文件和目录。File不能访问文件内容本身，如果需要访问需要使用输入输出流</p>
 <a id="more"></a>
 <h1 id="访问文件和目录"><a href="#访问文件和目录" class="headerlink" title="访问文件和目录"></a>访问文件和目录</h1><p>Java 使用文件路径字符串来创建File实例，既可以是绝对路径，也可以是相对路径</p>
-<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><pre><code>File(File parent,String child)    //
-File(String pathname)
-File(URI uri)
-</code></pre>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><pre><code>File(File parent,String child)    //通过父路径名和子路径名创建文件
+File(String pathname)    //通过指定的路径名创建文件
+File(URI uri)   //通过指定的uri路径创建文件
+</code></pre><h2 id="访问文件名"><a href="#访问文件名" class="headerlink" title="访问文件名"></a>访问文件名</h2><pre><code>String getName()    //返回此File对象的文件名或路径名
+String getPath()    //返回此File对象的路径名
+String getParent()  //返回此File对象的父目录名
+File getAbsoluteFile()   //返回此File对象的绝对路径
+String getAbsolutePath()   //返回此File对象的绝对路径名
+boolean renameTo(File newName)    //重命名
+</code></pre><p>示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">File f=new File(&quot;/home/memcpy/test/a.html&quot;);</span><br><span class="line">f.getName();         // a.html</span><br><span class="line">f.getPath();         // /home.memcpy/test/a.html</span><br><span class="line">f.getParent();       // /home.memcpy/test</span><br><span class="line">f.getAbsolutePath(); // /home/memcpy/test/a.html</span><br><span class="line">f.getAbsoluteFile(); // /home/memcpy/test/a.html</span><br></pre></td></tr></table></figure></p>
+<h2 id="文件检测"><a href="#文件检测" class="headerlink" title="文件检测"></a>文件检测</h2><pre><code>boolean exists()    //检测File对象所对应的文件或目录是否存在
+boolean isFile()    //检测是否是文件而不是目录
+boolean isDirectory()    //检测是否是目录而不是文件
+boolean canRead()     //检测是否可读
+boolean canWrite()    //检测是否可写
+boolean isHidden()    //是否为隐藏文件
+</code></pre><h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><pre><code>boolean delete()    //删除文件
+void deleteOnExit()    //当java虚拟机退出时，删除File对象所对的文件和目录
+</code></pre><h2 id="文件列表"><a href="#文件列表" class="headerlink" title="文件列表"></a>文件列表</h2><pre><code>String[] list()    //
+String[] list(FilenameFilter filter)    //
+File[] listFiles()   //
+File[] listFiles(FileFilter filter)
+</code></pre><h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><pre><code>boolean mkdir()    //通过路径名创建目录
+bolean mkdirs()    //通过路径名创建目录，包括不存在的父目录
+</code></pre><h1 id="代码实例"><a href="#代码实例" class="headerlink" title="代码实例"></a>代码实例</h1><h2 id="FileFilter"><a href="#FileFilter" class="headerlink" title="FileFilter"></a>FileFilter</h2><p>获取所有以.log为结尾的文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package my;</span><br><span class="line"></span><br><span class="line">import java.io.File;</span><br><span class="line">import java.io.FileFilter;</span><br><span class="line"></span><br><span class="line">class MyFilter implements FileFilter</span><br><span class="line">&#123;</span><br><span class="line">	@Override</span><br><span class="line">	public boolean accept(File pathname)</span><br><span class="line">	&#123;</span><br><span class="line">		String name=pathname.getName();</span><br><span class="line">		if(name.endsWith(&quot;.log&quot;))</span><br><span class="line">			return true;</span><br><span class="line">		else</span><br><span class="line">			return false;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">public class Hello</span><br><span class="line">&#123;</span><br><span class="line">	public static void main(String[] args)</span><br><span class="line">	&#123;</span><br><span class="line">		File f = new File(&quot;/home/memcpy/&quot;);</span><br><span class="line">		MyFilter filter=new MyFilter();</span><br><span class="line">		File[] files = f.listFiles(filter);</span><br><span class="line">		for(File file: files)</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.println(file);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="删除文件及文件夹"><a href="#删除文件及文件夹" class="headerlink" title="删除文件及文件夹"></a>删除文件及文件夹</h2><p>删除文件夹的前提是保证该文件夹为空<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">package my;</span><br><span class="line"></span><br><span class="line">import java.io.File;</span><br><span class="line">import java.io.FileFilter;</span><br><span class="line"></span><br><span class="line">public class Hello</span><br><span class="line">&#123;</span><br><span class="line">	public static void deleteFile(File pathname)</span><br><span class="line">	&#123;</span><br><span class="line">		if(pathname.isDirectory())</span><br><span class="line">		&#123;</span><br><span class="line">			File[] listFiles=pathname.listFiles();</span><br><span class="line">			for(File f : listFiles)</span><br><span class="line">			&#123;</span><br><span class="line">				if(f.isDirectory())</span><br><span class="line">				&#123;</span><br><span class="line">					deleteFile(f);</span><br><span class="line">				&#125;</span><br><span class="line">				f.delete();</span><br><span class="line">			&#125;</span><br><span class="line">			pathname.delete();</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			pathname.delete();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args)</span><br><span class="line">	&#123;</span><br><span class="line">		File f = new File(&quot;/home/memcpy/test&quot;);</span><br><span class="line">		deleteFile(f);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>重点掌握一些常用方法即可</p>
+</blockquote>
+
       
     </div>
     
@@ -533,7 +559,7 @@ File(URI uri)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#File"><span class="nav-number">1.</span> <span class="nav-text">File</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#访问文件和目录"><span class="nav-number">2.</span> <span class="nav-text">访问文件和目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数"><span class="nav-number">2.1.</span> <span class="nav-text">构造函数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#File"><span class="nav-number">1.</span> <span class="nav-text">File</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#访问文件和目录"><span class="nav-number">2.</span> <span class="nav-text">访问文件和目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数"><span class="nav-number">2.1.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问文件名"><span class="nav-number">2.2.</span> <span class="nav-text">访问文件名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件检测"><span class="nav-number">2.3.</span> <span class="nav-text">文件检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除"><span class="nav-number">2.4.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件列表"><span class="nav-number">2.5.</span> <span class="nav-text">文件列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建"><span class="nav-number">2.6.</span> <span class="nav-text">创建</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码实例"><span class="nav-number">3.</span> <span class="nav-text">代码实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#FileFilter"><span class="nav-number">3.1.</span> <span class="nav-text">FileFilter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除文件及文件夹"><span class="nav-number">3.2.</span> <span class="nav-text">删除文件及文件夹</span></a></li></ol></li></ol></div>
             
 
           </div>
