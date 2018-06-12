@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="张晨的 日志">
 <meta property="og:description" content="FileFile类可以用来在程序中操作文件和目录，能新建、删除、重命名文件和目录。File不能访问文件内容本身，如果需要访问需要使用输入输出流">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-12T06:29:11.352Z">
+<meta property="og:updated_time" content="2018-06-12T07:37:08.448Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java IO 之 File">
 <meta name="twitter:description" content="FileFile类可以用来在程序中操作文件和目录，能新建、删除、重命名文件和目录。File不能访问文件内容本身，如果需要访问需要使用输入输出流">
@@ -230,16 +230,6 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-schedule">
-          <a href="/schedule/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
-            
-            日程表
-          </a>
-        </li>
-      
 
       
     </ul>
@@ -313,6 +303,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -371,9 +383,9 @@ boolean canWrite()    //检测是否可写
 boolean isHidden()    //是否为隐藏文件
 </code></pre><h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><pre><code>boolean delete()    //删除文件
 void deleteOnExit()    //当java虚拟机退出时，删除File对象所对的文件和目录
-</code></pre><h2 id="文件列表"><a href="#文件列表" class="headerlink" title="文件列表"></a>文件列表</h2><pre><code>String[] list()    //
-String[] list(FilenameFilter filter)    //
-File[] listFiles()   //
+</code></pre><h2 id="文件列表"><a href="#文件列表" class="headerlink" title="文件列表"></a>文件列表</h2><pre><code>String[] list()    //列出File对象的所有子文件名和路径
+String[] list(FilenameFilter filter)    //过滤出符合条件的文件
+File[] listFiles()  
 File[] listFiles(FileFilter filter)
 </code></pre><h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><pre><code>boolean mkdir()    //通过路径名创建目录
 bolean mkdirs()    //通过路径名创建目录，包括不存在的父目录
