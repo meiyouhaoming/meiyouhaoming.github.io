@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="字节流按照流的流向，可以将流分为输入流和输出流。若按照流的操作数据类型来分，可分为字节流和字符流。字节流可用于读写字节，通常可操作图片视频等数据。字符流可以读写字符数据，方便对文本文件进行操作。">
+<meta name="description" content="字符流操作的数据单元是字符，操作方式与字节流几乎一样">
 <meta name="keywords" content="IO">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java 基础 : IO流之字节流">
-<meta property="og:url" content="https://www.memcpywr.cn/2018/06/10/Java-基础-IO流之字节流/index.html">
+<meta property="og:title" content="Java IO之字符流">
+<meta property="og:url" content="https://www.memcpywr.cn/2018/06/12/Java-IO之字符流/index.html">
 <meta property="og:site_name" content="张晨的 日志">
-<meta property="og:description" content="字节流按照流的流向，可以将流分为输入流和输出流。若按照流的操作数据类型来分，可分为字节流和字符流。字节流可用于读写字节，通常可操作图片视频等数据。字符流可以读写字符数据，方便对文本文件进行操作。">
+<meta property="og:description" content="字符流操作的数据单元是字符，操作方式与字节流几乎一样">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-10T07:22:06.172Z">
+<meta property="og:updated_time" content="2018-06-14T12:59:31.691Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java 基础 : IO流之字节流">
-<meta name="twitter:description" content="字节流按照流的流向，可以将流分为输入流和输出流。若按照流的操作数据类型来分，可分为字节流和字符流。字节流可用于读写字节，通常可操作图片视频等数据。字符流可以读写字符数据，方便对文本文件进行操作。">
+<meta name="twitter:title" content="Java IO之字符流">
+<meta name="twitter:description" content="字符流操作的数据单元是字符，操作方式与字节流几乎一样">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://www.memcpywr.cn/2018/06/10/Java-基础-IO流之字节流/"/>
+  <link rel="canonical" href="https://www.memcpywr.cn/2018/06/12/Java-IO之字符流/"/>
 
 
 
 
 
-  <title>Java 基础 : IO流之字节流 | 张晨的 日志</title>
+  <title>Java IO之字符流 | 张晨的 日志</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.memcpywr.cn/2018/06/10/Java-基础-IO流之字节流/">
+    <link itemprop="mainEntityOfPage" href="https://www.memcpywr.cn/2018/06/12/Java-IO之字符流/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhangchen">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java 基础 : IO流之字节流</h1>
+          <h1 class="post-title" itemprop="name headline">Java IO之字符流</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-10T12:26:21+08:00">
-                2018-06-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-12T22:57:37+08:00">
+                2018-06-12
               </time>
             
 
@@ -333,8 +333,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/06/10/Java-基础-IO流之字节流/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/06/10/Java-基础-IO流之字节流/" itemprop="commentsCount"></span>
+                <a href="/2018/06/12/Java-IO之字符流/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/06/12/Java-IO之字符流/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -362,21 +362,24 @@
       
 
       
-        <h1 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h1><p>按照流的流向，可以将流分为输入流和输出流。若按照流的操作数据类型来分，可分为字节流和字符流。字节流可用于读写字节，通常可操作图片视频等数据。字符流可以读写字符数据，方便对文本文件进行操作。</p>
+        <p>字符流操作的数据单元是字符，操作方式与字节流几乎一样</p>
 <a id="more"></a>
-<h1 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h1><p>InputStream 是所有输入流的抽象基类，本身不能创建实例来执行输入，必须使用其子类来创建对象。</p>
-<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int read()    //从输入流中读取单个字节，返回所读取的字节数据</span><br><span class="line">int read(byte[] b)     //从输入流中最多读取b.length个字节的数据，并将其存储到字节数组b中</span><br><span class="line">int read(byte[] b, int off, int len)    //从输入流中最多读取b.length个字节的数据，存储在b数组中，从数组的off位置开始存入。</span><br></pre></td></tr></table></figure>
-<h2 id="读取文本内容"><a href="#读取文本内容" class="headerlink" title="读取文本内容"></a>读取文本内容</h2><p>采用FileInputStream子类来读取文本内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">package Hello;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line"></span><br><span class="line">public class Hello&#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">            FileInputStream fis=null;</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">            fis=new FileInputStream(&quot;d:/abc.test&quot;);</span><br><span class="line">            byte[] buf=new byte[1024];</span><br><span class="line">            int hasRead=0;</span><br><span class="line">            while((hasRead=fis.read(buf))&gt;0)</span><br><span class="line">            &#123;</span><br><span class="line">                System.out.println(new String(buf));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="OutputStream"><a href="#OutputStream" class="headerlink" title="OutputStream"></a>OutputStream</h1><h2 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void close()    //关闭输出流</span><br><span class="line">void flush()    //刷新输出流并强制将任何缓冲的输出字节写入</span><br><span class="line">void write(byte[] b)    //将字节数组b的数据输出到指定输出流</span><br><span class="line">void write(byte[] b, int off, int len)     //将字节数组从off位置开始，长度为len的字节输出到输出流</span><br></pre></td></tr></table></figure>
-<h2 id="使用字节流写入数据到文本文件中"><a href="#使用字节流写入数据到文本文件中" class="headerlink" title="使用字节流写入数据到文本文件中"></a>使用字节流写入数据到文本文件中</h2><p>使用FileOutputStream来将数据写入文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package Hello;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line"></span><br><span class="line">public class Hello&#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">          FileInputStream fis=null;</span><br><span class="line">          FileOutputStream fos=null;</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">            fis=new FileInputStream(&quot;d:/abc.test&quot;);</span><br><span class="line">            fos=new FileOutputStream(&quot;d:/abc2.test&quot;);</span><br><span class="line">            byte[] buf=new byte[1024];</span><br><span class="line">            int hasRead=0;</span><br><span class="line">            while((hasRead=fis.read(buf))&gt;0)</span><br><span class="line">            &#123;</span><br><span class="line">                fos.write(buf, 0, hasRead);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Reader"><a href="#Reader" class="headerlink" title="Reader"></a>Reader</h1><p>Reader是所有字符输入流的抽象基类，通过子类来创建实例</p>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><pre><code>int read()    //从输入流中读取单个字符，返回读取的字符数据
+int read(char[] cbuf)    //从输入流中最多读取cbuf.length个字符的数据，并存储在cbuf中
+int read(char[] cbuf, int off, int len)    //从输入流中最多读取cbuf.length个字符数据，从数组的off位置开始存入cbuf
+</code></pre><h2 id="读取文本内容"><a href="#读取文本内容" class="headerlink" title="读取文本内容"></a>读取文本内容</h2><p>采用FileReader来读取文本内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">package Hello;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line"></span><br><span class="line">public class Hello &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            FileReader fileReader=new FileReader(&quot;d:/hello.txt&quot;);</span><br><span class="line"></span><br><span class="line">            char[] cbuf=new char[32];</span><br><span class="line">            int hasRead=0;</span><br><span class="line">            while((hasRead=fileReader.read(cbuf))&gt;0)</span><br><span class="line">            &#123;</span><br><span class="line">                System.out.print(new String(cbuf,0,hasRead));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="Writer"><a href="#Writer" class="headerlink" title="Writer"></a>Writer</h1><h2 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h2><pre><code>void write(int c)    //将指定的字节/字符输出到输出流，c既可为字节，也可为字符
+void write(char[] cbuf)    //将字符数组中的数据输出到指定输出流
+void write(char[] cbuf, int off, int len)    
+void write(String str)    //将str字符串里包含的字符输出到指定输出流
+void write(String str, int off, int len)    //将str从off开始，长度为len的字符输出到指定输出流
+void flush()
+void close()
+</code></pre><h2 id="直接输出字符串内容"><a href="#直接输出字符串内容" class="headerlink" title="直接输出字符串内容"></a>直接输出字符串内容</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">package my;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line"></span><br><span class="line">public class Hello &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">    	</span><br><span class="line">        try(FileWriter fw=new FileWriter(&quot;/home/memcpy/hello.txt&quot;)) &#123;</span><br><span class="line">           </span><br><span class="line">            &#123;</span><br><span class="line">                fw.write(&quot;大家好\r\n&quot;);</span><br><span class="line">                fw.write(&quot;现代操作系统\r\n&quot;);</span><br><span class="line">                fw.write(&quot;离散数学\r\n&quot;);</span><br><span class="line">                fw.write(&quot;概率论与数理统计\r\n&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="处理流的用法"><a href="#处理流的用法" class="headerlink" title="处理流的用法"></a>处理流的用法</h2><p>处理流可对外提供更方便的输入输出方法,使用处理流来包装节点流，程序通过处理流来执行输入输出功能。下面使用处理流来包装OutputStream<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">package my;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line"></span><br><span class="line">public class Hello &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">    	try(FileOutputStream fos=new FileOutputStream(&quot;/home/memcpy/hello.txt&quot;);</span><br><span class="line">    			PrintStream ps=new PrintStream(fos))</span><br><span class="line">		&#123;</span><br><span class="line">    		ps.println(&quot;普通字符串&quot;);</span><br><span class="line">    		ps.println(new Hello());</span><br><span class="line">		&#125; catch (IOException e)</span><br><span class="line">		&#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<ul>
-<li>从输入流中读取数据并写入到文本文件中，此例实现了文件复制功能</li>
-<li>不要忘记关闭输出流，在执行 close() 方法前会自动执行输出流的flush() 方法，只要正常关闭所有输出流即可保证程序正常</li>
-<li>Java 7改写了所有的IO资源类，他们自动实现了AutoCloseable接口，因此都可以通过自动关闭资源的try语句来关闭这些IO流</li>
-</ul>
+<p>通常如果需要输出文本内容，都应该讲输出流包装成PrintStream后进行输出<br>使用处理流包装了底层节点流之后，关闭输入/输出流资源时，只要关闭最<br>上层的处理流即可，系统会自动关闭被包装的节点流</p>
 </blockquote>
 
       
@@ -408,8 +411,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/07/hello-zhangchen/" rel="next" title="hello zhangchen">
-                <i class="fa fa-chevron-left"></i> hello zhangchen
+              <a href="/2018/06/10/Java-IO-之-File/" rel="next" title="Java IO 之 File">
+                <i class="fa fa-chevron-left"></i> Java IO 之 File
               </a>
             
           </div>
@@ -417,10 +420,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/10/Java-IO-之-File/" rel="prev" title="Java IO 之 File">
-                Java IO 之 File <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -559,7 +558,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#字节流"><span class="nav-number">1.</span> <span class="nav-text">字节流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#InputStream"><span class="nav-number">2.</span> <span class="nav-text">InputStream</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用方法"><span class="nav-number">2.1.</span> <span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读取文本内容"><span class="nav-number">2.2.</span> <span class="nav-text">读取文本内容</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OutputStream"><span class="nav-number">3.</span> <span class="nav-text">OutputStream</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用方法-1"><span class="nav-number">3.1.</span> <span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用字节流写入数据到文本文件中"><span class="nav-number">3.2.</span> <span class="nav-text">使用字节流写入数据到文本文件中</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Reader"><span class="nav-number">1.</span> <span class="nav-text">Reader</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用方法"><span class="nav-number">1.1.</span> <span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读取文本内容"><span class="nav-number">1.2.</span> <span class="nav-text">读取文本内容</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Writer"><span class="nav-number">2.</span> <span class="nav-text">Writer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用方法-1"><span class="nav-number">2.1.</span> <span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直接输出字符串内容"><span class="nav-number">2.2.</span> <span class="nav-text">直接输出字符串内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理流的用法"><span class="nav-number">2.3.</span> <span class="nav-text">处理流的用法</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -761,7 +760,7 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({
-            id: 'Java 基础 : IO流之字节流', 
+            id: 'Java IO之字符流', 
             owner: 'meiyouhaoming',
             repo: 'meiyouhaoming.github.io',
             
