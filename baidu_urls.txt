@@ -1,1 +1,1 @@
-https://www.memcpywr.cn/2018/06/12/Java-IO之字符流/
+https://www.memcpywr.cn/2018/06/14/Java-IO基础-字节流缓冲区/
