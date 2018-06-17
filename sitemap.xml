@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.memcpywr.cn/2018/06/10/Java-IO-%E4%B9%8B-File/</loc>
+    
+    <lastmod>2018-06-17T01:42:15.668Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.memcpywr.cn/2018/06/12/Java-IO%E4%B9%8B%E5%AD%97%E7%AC%A6%E6%B5%81/</loc>
+    
+    <lastmod>2018-06-17T01:42:08.220Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.memcpywr.cn/2018/06/10/Java-%E5%9F%BA%E7%A1%80-IO%E6%B5%81%E4%B9%8B%E5%AD%97%E8%8A%82%E6%B5%81/</loc>
+    
+    <lastmod>2018-06-17T01:41:56.860Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.memcpywr.cn/2018/06/14/Java-IO%E5%9F%BA%E7%A1%80-%E5%AD%97%E8%8A%82%E6%B5%81%E7%BC%93%E5%86%B2%E5%8C%BA/</loc>
     
-    <lastmod>2018-06-17T00:55:29.600Z</lastmod>
+    <lastmod>2018-06-17T01:41:26.105Z</lastmod>
     
   </url>
   
@@ -23,30 +44,9 @@
   </url>
   
   <url>
-    <loc>https://www.memcpywr.cn/2018/06/12/Java-IO%E4%B9%8B%E5%AD%97%E7%AC%A6%E6%B5%81/</loc>
-    
-    <lastmod>2018-06-14T12:59:31.691Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.memcpywr.cn/2018/06/10/Java-IO-%E4%B9%8B-File/</loc>
-    
-    <lastmod>2018-06-12T07:37:08.448Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.memcpywr.cn/2018/06/07/hello-zhangchen/</loc>
     
     <lastmod>2018-06-10T07:47:15.876Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.memcpywr.cn/2018/06/10/Java-%E5%9F%BA%E7%A1%80-IO%E6%B5%81%E4%B9%8B%E5%AD%97%E8%8A%82%E6%B5%81/</loc>
-    
-    <lastmod>2018-06-10T07:22:06.172Z</lastmod>
     
   </url>
   
