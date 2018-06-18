@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="IO," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="Hello World 这是一篇测试博客的文章仅做前期测试用">
+<meta name="description" content="字符流缓冲区操作方式与字节流缓冲区类似，只是操作的数据类型为字符">
+<meta name="keywords" content="IO">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello zhangchen">
-<meta property="og:url" content="https://www.memcpywr.cn/2018/06/07/hello-zhangchen/index.html">
+<meta property="og:title" content="Java-IO基础-字符流缓冲区">
+<meta property="og:url" content="https://www.memcpywr.cn/2018/06/17/Java-IO基础-字符流缓冲区/index.html">
 <meta property="og:site_name" content="张晨的 日志">
-<meta property="og:description" content="Hello World 这是一篇测试博客的文章仅做前期测试用">
+<meta property="og:description" content="字符流缓冲区操作方式与字节流缓冲区类似，只是操作的数据类型为字符">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-10T07:47:15.876Z">
+<meta property="og:updated_time" content="2018-06-18T00:25:21.399Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello zhangchen">
-<meta name="twitter:description" content="Hello World 这是一篇测试博客的文章仅做前期测试用">
+<meta name="twitter:title" content="Java-IO基础-字符流缓冲区">
+<meta name="twitter:description" content="字符流缓冲区操作方式与字节流缓冲区类似，只是操作的数据类型为字符">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://www.memcpywr.cn/2018/06/07/hello-zhangchen/"/>
+  <link rel="canonical" href="https://www.memcpywr.cn/2018/06/17/Java-IO基础-字符流缓冲区/"/>
 
 
 
 
 
-  <title>hello zhangchen | 张晨的 日志</title>
+  <title>Java-IO基础-字符流缓冲区 | 张晨的 日志</title>
   
 
 
@@ -262,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.memcpywr.cn/2018/06/07/hello-zhangchen/">
+    <link itemprop="mainEntityOfPage" href="https://www.memcpywr.cn/2018/06/17/Java-IO基础-字符流缓冲区/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhangchen">
@@ -279,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hello zhangchen</h1>
+          <h1 class="post-title" itemprop="name headline">Java-IO基础-字符流缓冲区</h1>
         
 
         <div class="post-meta">
@@ -291,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-07T12:51:08+08:00">
-                2018-06-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-17T10:02:03+08:00">
+                2018-06-17
               </time>
             
 
@@ -314,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Diary/" itemprop="url" rel="index">
-                    <span itemprop="name">Diary</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -332,8 +333,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/06/07/hello-zhangchen/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/06/07/hello-zhangchen/" itemprop="commentsCount"></span>
+                <a href="/2018/06/17/Java-IO基础-字符流缓冲区/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/06/17/Java-IO基础-字符流缓冲区/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -361,13 +362,25 @@
       
 
       
-        <h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><blockquote>
-<p>这是一篇测试博客的文章<br>仅做前期测试用</p>
-</blockquote>
+        <p>字符流缓冲区操作方式与字节流缓冲区类似，只是操作的数据类型为字符</p>
 <a id="more"></a>
-<hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h1 id="BuferedReader"><a href="#BuferedReader" class="headerlink" title="BuferedReader"></a>BuferedReader</h1><p>从字符输入流读取文本,并缓冲字符来提供高效读取</p>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><pre><code>BufferedReader(Reader in)
+BufferedReader(Reader in, int size)    //使用指定大小的输入缓冲区来创建
+</code></pre><h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><pre><code>int read()
+int read(char[] cbuf, int off, int len)
+String readLine()    //读取一行文本
+</code></pre><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">try</span> (FileReader fr = <span class="keyword">new</span> FileReader(<span class="string">"/home/memcpy/hello.txt"</span>);</span><br><span class="line">				BufferedReader br = <span class="keyword">new</span> BufferedReader(fr))</span><br><span class="line">		&#123;</span><br><span class="line">			String line=<span class="keyword">null</span>;</span><br><span class="line">			<span class="keyword">while</span>((line=br.readLine())!=<span class="keyword">null</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				System.out.println(line);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e)</span><br><span class="line">		&#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="BufferedWriter"><a href="#BufferedWriter" class="headerlink" title="BufferedWriter"></a>BufferedWriter</h1><p>将文本写入字符输出流,缓冲字符来提供高效写入</p>
+<h2 id="构造函数-1"><a href="#构造函数-1" class="headerlink" title="构造函数"></a>构造函数</h2><pre><code>BufferedWriter(Writer out)
+BufferedWriter(Writer out, int size)
+</code></pre><h2 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h2><pre><code>void write(int c)
+void write(String s, int off, int len)
+void write(char[] cbuf, int off, int len)
+void flush()
+void newLine()    //写一个行分隔符
+</code></pre><h2 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        FileWriter fw= <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            fw = <span class="keyword">new</span> FileWriter(<span class="string">"d:/hello.txt"</span>);</span><br><span class="line">            BufferedWriter bw=<span class="keyword">new</span> BufferedWriter(fw);</span><br><span class="line">            bw.write(<span class="string">"hello"</span>);</span><br><span class="line">            bw.newLine();</span><br><span class="line">            bw.write(<span class="string">"world"</span>);</span><br><span class="line"></span><br><span class="line">            bw.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="example拷贝文件"><a href="#example拷贝文件" class="headerlink" title="example拷贝文件"></a>example拷贝文件</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        BufferedReader br = <span class="keyword">null</span>;</span><br><span class="line">        BufferedWriter bw = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(<span class="string">"d:/hello.txt"</span>));</span><br><span class="line">            bw = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> FileWriter(<span class="string">"d:/cphello.txt"</span>));</span><br><span class="line">            <span class="keyword">int</span> hasRead = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">char</span>[] cbuf = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">128</span>];</span><br><span class="line">            <span class="keyword">while</span> ((hasRead = br.read(cbuf)) != -<span class="number">1</span>) &#123;</span><br><span class="line">                bw.write(cbuf, <span class="number">0</span>, hasRead);</span><br><span class="line">                bw.flush();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (br != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    br.close();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (bw != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    bw.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -381,6 +394,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/IO/" rel="tag"># IO</a>
+          
+        </div>
       
 
       
@@ -406,8 +425,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/06/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/06/14/Java-IO基础-字节流缓冲区/" rel="next" title="Java IO基础--字节流缓冲区">
+                <i class="fa fa-chevron-left"></i> Java IO基础--字节流缓冲区
               </a>
             
           </div>
@@ -415,10 +434,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/10/Java-基础-IO流之字节流/" rel="prev" title="Java 基础 : IO流之字节流">
-                Java 基础 : IO流之字节流 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -557,7 +572,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hello-World"><span class="nav-number">1.</span> <span class="nav-text">Hello World</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BuferedReader"><span class="nav-number">1.</span> <span class="nav-text">BuferedReader</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数"><span class="nav-number">1.1.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用方法"><span class="nav-number">1.2.</span> <span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例"><span class="nav-number">1.3.</span> <span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BufferedWriter"><span class="nav-number">2.</span> <span class="nav-text">BufferedWriter</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数-1"><span class="nav-number">2.1.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用方法-1"><span class="nav-number">2.2.</span> <span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例-1"><span class="nav-number">2.3.</span> <span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#example拷贝文件"><span class="nav-number">3.</span> <span class="nav-text">example拷贝文件</span></a></li></ol></div>
             
 
           </div>
@@ -759,7 +774,7 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({
-            id: 'hello zhangchen', 
+            id: 'Java-IO基础-字符流缓冲区', 
             owner: 'meiyouhaoming',
             repo: 'meiyouhaoming.github.io',
             
